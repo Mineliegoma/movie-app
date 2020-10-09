@@ -2,14 +2,17 @@ import React from 'react';
 import movies from './api'
 import MovieCard from './MovieCard'
 import Form from './Components/Form.js'
+import SearchForm from './Components/SearchForm.js'
+
 
 
 class MovieContainer extends React.Component {
  state = {
-  movies: movies
+  movies: movies,
+  mySearch: ""
  }
  renderMovies = () => {
-  return this.state.movies.map(aMovie => <MovieCard key={aMovie.id} data={aMovie} />)
+  return this.state.movies.filter(aMovie => aMovie.title.toLowerCase().includes(this.state.mySearch.toLowerCase())).map(aMovie => <MovieCard key={aMovie.id} data={aMovie} />)
 
  }
  submitHandler = (movieObj) => {
@@ -22,6 +25,11 @@ class MovieContainer extends React.Component {
   console.log(newArray)
 
  }
+ searchHandler = (e) => {
+  console.log("search")
+  // updating the current state
+  this.setState({ mySearch: e.target.value })
+ }
 
  render() {
   //console.log(renderMovie)
@@ -31,6 +39,7 @@ class MovieContainer extends React.Component {
     <br />
     <Form submitHandler={this.submitHandler} />
     <br />
+    <SearchForm mySearch={this.state.searchHandler} searchHandler={this.searchHandler} />
     <br />
     {this.renderMovies()}
    </div>
