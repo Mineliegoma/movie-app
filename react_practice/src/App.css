@@ -29,18 +29,7 @@ body {
   text-align: center;
   letter-spacing: 1rem;
 }
-
-.logo {
-  margin-bottom: 10px;
-}
-
-.image-container {
-  width: 100%;
-  display: left;
-  justify-content: center;
-}
-
-.image-card {
+.card-front {
   width: 300px;
   border: 1px solid #00000020;
   border-radius: 2px;
@@ -48,17 +37,29 @@ body {
   background-color: burlywood;
 }
 
-.image {
-  width: 250px;
-  /* border: 1px solid black; */
+.logo {
+  margin-bottom: 10px;
 }
 
-.title {
-  text-align: left;
-  padding: 15px 10px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #000000dd;
+.container {
+  width: 100%;
+  display: left;
+  justify-content: center;
+}
+
+
+
+.image {
+  width: 250px;
+  
+}
+
+.title-card {
+  text-align: right;
+  padding: 20px 25px;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #1a4303dd;
 }
 
 .likes-section {
@@ -66,19 +67,21 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
+  
 }
 
-.likes {
+.number-likes {
   font-size: 0.9rem;
   font-weight: 600;
+   color: #1a4303dd;
 }
 
-.like-button {
-  color: rgb(255, 127, 80);
+.button {
+  color: rgb(236, 238, 243);
   font-size: 1.3rem;
   border: none;
   background: none;
-  transition: color 300ms;
+  
   cursor: pointer;
   
 }
